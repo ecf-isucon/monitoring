@@ -4,11 +4,11 @@ nix-shell -p ansible
 
 ```shell
 # 疎通確認
-ansible {{ target ip address }} \
+ansible 52.192.169.155 \
 -m ping \
 -i inventories/hosts \
--u {{ ssh user name }} \
---private-key={{ path to private key }}
+-u isucon \
+--private-key=~/.ssh/id_github
 ```
 
 ```shell
@@ -20,7 +20,7 @@ ansible-galaxy collection install prometheus.prometheus
 OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES \
 ansible-playbook \
 -i inventories/hosts \
--u zerosum \
+-u isucon \
 --private-key="~/.ssh/id_github" \
 --ask-become-pass \
 install-node_exporter.yaml

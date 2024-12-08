@@ -23,6 +23,15 @@ services:
       - type: bind
         source: './grafana/dashboards'
         target: '/var/lib/grafana/dashboards'
+  s1:
+    build:
+      context: .
+      dockerfile: ./tunnel/Dockerfile
+    volumes:
+      - ./tunnel/config:/etc/ssh/ssh_config:ro
+      - ./tunnel/key/id_isucon:/root/.ssh/id_isucon:ro
+    entrypoint: [ "ssh", "-N", "s1", "-i", "/root/.ssh/id_isucon" ]
+    restart: always
 
 volumes:
   prometheus-data: {}

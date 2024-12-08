@@ -1,0 +1,11 @@
+Host *
+	TCPKeepAlive yes
+	ServerAliveInterval 60
+	StrictHostKeyChecking no
+	UserKnownHostsFile /dev/null
+	User isucon
+	LocalForward 0:9100 0:9100
+	LocalForward 0:9558 0:9558
+
+Host s1
+	HostName isuride.xiv.isucon.net

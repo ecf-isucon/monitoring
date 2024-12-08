@@ -9,4 +9,8 @@ scrape_configs:
   - job_name: 'node'
     scrape_interval: 5s
     static_configs:
-      - targets: ['ec2-13-114-102-15.ap-northeast-1.compute.amazonaws.com:9100']
+      - targets: ['s1:9100']
+  - job_name: 'systemd'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['s1:9558']
