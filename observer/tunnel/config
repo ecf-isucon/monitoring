@@ -8,4 +8,4 @@ Host *
 	LocalForward 0:9558 0:9558
 
 Host s1
-	HostName isuride.xiv.isucon.net
+	HostName 192.168.1.30

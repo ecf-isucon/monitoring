@@ -4,11 +4,11 @@ nix-shell -p ansible
 
 ```shell
 # 疎通確認
-ansible 52.192.169.155 \
+ansible {{ ip addr | hostname }} \
 -m ping \
 -i inventories/hosts \
 -u isucon \
---private-key=~/.ssh/id_github
+--private-key=../tunnel/key/id_isucon
 ```
 
 ```shell
@@ -21,7 +21,7 @@ OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES \
 ansible-playbook \
 -i inventories/hosts \
 -u isucon \
---private-key="~/.ssh/id_github" \
+--private-key="../tunnel/key/id_isucon" \
 --ask-become-pass \
-install-node_exporter.yaml
+install-exporter.yaml
 ```
